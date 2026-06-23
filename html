@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Interactive UX Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <aside class="app-sidebar">
+        <div class="brand-logo">NEXUS PROTOTYPE v2.0</div>
+        <ul class="nav-menu">
+            <li class="nav-button active" onclick="navigate('storefront')">🛍️ Storefront Sim</li>
+            <li class="nav-button" onclick="navigate('analytics')">📈 Real-time Canvas</li>
+            <li class="nav-button" onclick="navigate('testing-hub')">🧪 Testing Sandbox</li>
+        </ul>
+    </aside>
+
+    <div class="main-workspace">
+        <header class="top-navbar">
+            <input type="text" class="search-bar" placeholder="Filter UI components instantly..." id="uiSearch" onkeyup="filterStorefront()">
+            <div class="cart-pill">🛒 Cart Status: <span id="cart-counter" style="color:var(--secondary)">0 Items</span></div>
+        </header>
+
+        <main class="workspace-content">
+            
+            <div id="storefront" class="view-state active">
+                <h2>Interactive Dynamic Component Matrix</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1rem;">Test operational state modifications by triggering items dynamically into data pipelines below.</p>
+                <div class="interactive-grid" id="productGrid">
+                    <div class="product-card" data-title="Wireless Quantum Mouse">
+                        <div>
+                            <h4>Wireless Quantum Mouse</h4>
+                            <p style="color: var(--text-muted); font-size:0.85rem; margin-top:6px;">High fidelity custom mouse peripheral instance simulation.</p>
+                        </div>
+                        <button class="btn-action" onclick="updateCartCounter(1)">Add Component To State</button>
+                    </div>
+                    <div class="product-card" data-title="Mechanical Linear Matrix Keyboard">
+                        <div>
+                            <h4>Mechanical Matrix Keyboard</h4>
+                            <p style="color: var(--text-muted); font-size:0.85rem; margin-top:6px;">Hot-swappable tactile asset logic rendering configuration.</p>
+                        </div>
+                        <button class="btn-action" onclick="updateCartCounter(1)">Add Component To State</button>
+                    </div>
+                    <div class="product-card" data-title="Curved Micro-LED Array Monitor">
+                        <div>
+                            <h4>Ultra-wide Micro-LED Array</h4>
+                            <p style="color: var(--text-muted); font-size:0.85rem; margin-top:6px;">High refresh asset monitoring design module.</p>
+                        </div>
+                        <button class="btn-action" onclick="updateCartCounter(1)">Add Component To State</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="analytics" class="view-state">
+                <h2>Real-time Render Canvas Interaction</h2>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Click anywhere inside the Canvas coordinate system map below to trigger interactive tracking vectors.</p>
+                <canvas id="prototypeCanvas" width="700" height="350" style="background:#1e293b; border-radius: var(--radius); cursor:crosshair; border:1px solid var(--surface-accent); width:100%;"></canvas>
+            </div>
+
+            <div id="testing-hub" class="view-state">
+                <h2>Dynamic User Feedback Integration Log</h2>
+                <p style="color: var(--text-muted); margin-bottom: 2rem;">Simulate true testing iteration loop arrays. Submit parameters below to append tracking objects live.</p>
+                <div class="feedback-split">
+                    <div class="testing-input-group">
+                        <label style="display:block; margin-bottom:8px; font-weight:600;">Feedback Description</label>
+                        <textarea id="feedbackText" rows="4" placeholder="Enter structural layout anomalies, interactive flow performance insights, or visual layer revisions..."></textarea>
+                        <button class="btn-action" style="background:var(--secondary)" onclick="processFeedbackEntry()">Commit Feedback Log Object</button>
+                    </div>
+                    <div>
+                        <h4 style="margin-bottom:8px;">Live Array Iteration Trace</h4>
+                        <div class="log-box" id="feedbackContainer">
+                            <div class="log-item"><b>[System Init]</b> Prototype environment initialized completely inside client view.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script defer src="app.js"></script>
+</body>
+</html>
